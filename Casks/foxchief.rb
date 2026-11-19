@@ -1,6 +1,6 @@
 cask "foxchief" do
-  version "0.2.21,47"
-  sha256 "e86ebd4c9912a36487ee2e3b6a11e939c3eaf091105f3aa42d4358df7b429a2f"
+  version "0.2.22,50"
+  sha256 "2724727ef7cfa5360f5b82245275f17503196d0a9e3bb9dc7cb38226369a9231"
 
   url "https://download.foxchief.com/mac/#{version.csv.first}/#{version.csv.second}/FoxChief-#{version.csv.first}.dmg"
   name "FoxChief"
@@ -21,8 +21,8 @@ cask "foxchief" do
   app "FoxChief.app"
   binary "#{appdir}/FoxChief.app/Contents/Helpers/foxchief"
 
-  uninstall launchctl: "com.brunvo.brunvod",
-            quit:      "com.brunvo.app"
+  uninstall launchctl: ["com.brunvo.brunvod", "com.foxchief.foxchiefd"],
+            quit:      ["com.brunvo.app", "com.foxchief.app"]
 
   zap trash: [
         "~/.brunvo/bin/brunvo",
@@ -36,9 +36,13 @@ cask "foxchief" do
         "~/Library/Application Support/Brunvo",
         "~/Library/Application Support/FoxChief",
         "~/Library/Caches/com.brunvo.app",
+        "~/Library/Caches/com.foxchief.app",
         "~/Library/HTTPStorages/com.brunvo.app",
+        "~/Library/HTTPStorages/com.foxchief.app",
         "~/Library/Preferences/com.brunvo.app.plist",
+        "~/Library/Preferences/com.foxchief.app.plist",
         "~/Library/Saved Application State/com.brunvo.app.savedState",
+        "~/Library/Saved Application State/com.foxchief.app.savedState",
       ],
       rmdir: ["~/.foxchief", "~/.brunvo"]
 end
