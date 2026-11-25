@@ -1,6 +1,6 @@
 cask "foxchief" do
-  version "0.2.26,66"
-  sha256 "fdcb51e70841b3ec26f4e47e41ad743e59d372574d25e690cd2622fac0f4d155"
+  version "0.2.27,71"
+  sha256 "f7410596c72af112542c037099c6e46ad7d038e26e40e3eec7277bf8903e4074"
 
   url "https://download.foxchief.com/mac/#{version.csv.first}/#{version.csv.second}/FoxChief-#{version.csv.first}.dmg"
   name "FoxChief"
